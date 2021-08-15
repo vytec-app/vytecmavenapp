@@ -12,7 +12,7 @@ pipeline {
                 git 'https://github.com/vytec-app/vytecmavenapp.git'
 
                 // Run Maven on a Unix agent.
-                sh "mvn -Dmaven.test.failure.ignore=true clean package sonar:sonar -Dsonar.host.url=http://172.31.11.210:9000"
+                sh "mvn -Dmaven.test.failure.ignore=true clean package sonar:sonar -Dsonar.host.url=http://172.31.11.210:9000 -Dsonar.login=admin -Dsonar.password=changeme"
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
